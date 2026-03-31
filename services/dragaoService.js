@@ -31,7 +31,7 @@ class dragaoService {
     async Delete(id){
         try {
             await Dragao.findByIdAndDelete(id)
-            console.log(`Dragão com as id ${id} foi deletado.`)
+            console.log(`Dragão com a id ${id} foi deletado.`)
         } catch (error) {
             console.log(error)
         }
