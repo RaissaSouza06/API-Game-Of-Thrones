@@ -64,6 +64,35 @@ paths:
           description: Erro na validação da ID
         500:
           description: Erro interno do servidor
+    get:
+      summary: Retorna os detalhes de um dragão específico
+      tags: [Dragoes]
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Detalhes do dragão encontrados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dragao'
+              example:
+                _id: "69cd6a50b4e74e92a7ecaa00"
+                name: "Viserion"
+                description: "Ressuscitado como dragão de gelo pelo Rei da Noite."
+                assembler: "Rei da Noite"
+                inspiredName: "Viserys Targaryen"
+                caracteristics:
+                  size: "Grande"
+                  color: "Creme/Dourado (Vivo) ou Azul (Morto)"
+                  temperament: "Submisso"
+                  specialAbility: "Sopro de fogo azul/gelo"
+        400:
+          description: Erro na validação da ID
+        404:
+          description: Dragão não encontrado
+        500:
+          description: Erro interno do servidor  
 
     delete:
       summary: Exclui um dragão do catálogo
